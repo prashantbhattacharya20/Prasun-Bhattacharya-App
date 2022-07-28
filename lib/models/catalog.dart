@@ -1,5 +1,5 @@
 class CatalogModel {
-  static final items = [
+  static List<Item> items = [
     Item(
         id: 1,
         name: "Advertising",
@@ -27,3 +27,4 @@ class Item {
       required this.color,
       required this.image});
 }
+
