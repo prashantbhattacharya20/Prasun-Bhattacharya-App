@@ -17,8 +17,10 @@ class MyDrawer extends StatelessWidget {
                   accountName: Text("Prasun Bhattacharya"),
                   accountEmail: Text("prasun.mgm@gmail.com"),
                   margin: EdgeInsets.zero,
-                  currentAccountPicture: CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
-                )
+                  currentAccountPicture: CircleAvatar(
+                    backgroundImage: NetworkImage(imageUrl)),
+                ),
+                
                 ),
 
             ListTile(
@@ -59,6 +61,21 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Mail Me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.black,
+                  ),
+              ), 
+            ),
+
+            ListTile(
+              key: key,
+              leading: Icon(
+                IconData(0xf88b, fontFamily: 'MaterialIcons'),
+                color: Colors.black,
+              ),
+              title: Text(
+                "Logout",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.black,
