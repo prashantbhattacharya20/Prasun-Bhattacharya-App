@@ -68,7 +68,7 @@ class CatalogItem extends StatelessWidget {
                     )
                   ),
                   
-                  child: "Book Now".text.make(),
+                  child: "Add to Cart".text.make(),
                   
                   )
               ],

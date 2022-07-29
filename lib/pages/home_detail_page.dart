@@ -12,7 +12,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: ButtonBar( alignment: MainAxisAlignment.spaceBetween,
               buttonPadding: EdgeInsets.all(10),
@@ -28,7 +28,7 @@ class HomeDetailPage extends StatelessWidget {
                       StadiumBorder(),
                     )
                   ),
-                  child: "Book Now".text.make(),  
+                  child: "Add to Cart".text.make(),  
                   ).wh(150, 50)
               ],),
       body: SafeArea(
@@ -55,8 +55,11 @@ class HomeDetailPage extends StatelessWidget {
                     children: [
                        catalog.name.text.xl3.color(MyTheme.darkBluishColor).bold.make(),
                        catalog.desc.text.xl.center.textStyle(context.captionStyle).make(),
+                       10.heightBox,
+                       "Dolores elitr amet lorem eirmod tempor et consetetur lorem, ea diam labore. Dolores elitr amet lorem eirmod tempor et consetetur lorem, ea diam labore consetetur dolore kasd sit at sed eos."
+                       .text.textStyle(context.captionStyle).make()
                     ],
-                  ).py16(),
+                  ).py32(),
                 ),
               )
             )
