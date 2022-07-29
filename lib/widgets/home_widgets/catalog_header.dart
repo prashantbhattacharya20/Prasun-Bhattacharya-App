@@ -9,8 +9,8 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Photography App".text.xl3.bold.color(MyTheme.darkBluishColor).make(),
-        "Photographer: Prasun Bhattacharya".text.xl.make(),
+        "Photography App".text.xl3.bold.color(context.theme.floatingActionButtonTheme.backgroundColor).make(),
+        "Photographer: Prasun Bhattacharya".text.xl.color(context.theme.floatingActionButtonTheme.backgroundColor).make(),
       ],
     );
   }

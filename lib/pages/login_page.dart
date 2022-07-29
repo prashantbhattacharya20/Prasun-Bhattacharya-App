@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: context.canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
@@ -48,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
+                    color: context.accentColor
                   ),
                 ),
                 SizedBox(
@@ -63,9 +65,13 @@ class _LoginPageState extends State<LoginPage> {
                             name = value;
                             setState(() {});
                           },
+                          cursorColor: context.accentColor,
                           decoration: InputDecoration(
                               hintText: "Enter Username",
-                              labelText: "Username"),
+                              hintStyle: TextStyle(color: context.accentColor),
+                              labelText: "Username",
+                              labelStyle: TextStyle(color: context.accentColor),
+                              ),
                           validator: (value) {
                             if (value!.isNotEmpty) {
                               return null;
@@ -75,7 +81,10 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
-                            hintText: "Enter Password", labelText: "Password"),
+                            hintText: "Enter Password",
+                            hintStyle: TextStyle(color: context.accentColor),
+                            labelText: "Password",
+                            labelStyle: TextStyle(color: context.accentColor)),
                         validator: (value) {
                           if (value!.isNotEmpty) {
                             if (value.length < 6) {
@@ -91,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40.0,
                       ),
                       Material(
-                        color: Colors.orange,
+                        color: Vx.gray600,
                         borderRadius:
                             BorderRadius.circular(changedbutton ? 50 : 10),
                         child: InkWell(
@@ -100,17 +109,17 @@ class _LoginPageState extends State<LoginPage> {
                             duration: Duration(seconds: 1),
                             height: 40,
                             width: changedbutton ? 50 : 150,
-                            color: Colors.orange,
+                            color: context.accentColor,
                             alignment: Alignment.center,
                             child: changedbutton
                                 ? Icon(
                                     Icons.done,
-                                    color: Colors.white,
+                                    color: context.canvasColor,
                                   )
                                 : Text(
                                     "LOGIN",
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: context.canvasColor,
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),

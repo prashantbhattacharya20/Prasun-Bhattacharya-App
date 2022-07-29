@@ -12,25 +12,32 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.transparent),
-      backgroundColor: MyTheme.creamColor,
-      bottomNavigationBar: ButtonBar( alignment: MainAxisAlignment.spaceBetween,
-              buttonPadding: EdgeInsets.all(10),
-              children: [
-                "\u{20B9}${catalog.price}".text.bold.xl4.color(Color.fromARGB(255, 69, 15, 70)).make(),
-                ElevatedButton(
-                  onPressed: (() {}), 
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      MyTheme.darkBluishColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent),
+      backgroundColor: context.canvasColor,
+      bottomNavigationBar: Container(
+        color: context.canvasColor,
+        child: ButtonBar( alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: EdgeInsets.all(10),
+                children: [
+                  "\u{20B9}${catalog.price}".text.bold.xl4.color(context.accentColor).make(),
+                  ElevatedButton(
+                    onPressed: (() {}), 
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        context.accentColor,
+                      ),
+                      foregroundColor: MaterialStateProperty.all(
+                        context.cardColor
+                      ),
+                      shape: MaterialStateProperty.all(
+                        StadiumBorder(),
+                      )
                     ),
-                    shape: MaterialStateProperty.all(
-                      StadiumBorder(),
-                    )
-                  ),
-                  child: "Add to Cart".text.make(),  
-                  ).wh(150, 50)
-              ],),
+                    child: "Add to Cart".text.make(),  
+                    ).wh(150, 50)
+                ],),
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -50,14 +57,14 @@ class HomeDetailPage extends StatelessWidget {
                 edge: VxEdge.TOP,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
-                       catalog.name.text.xl3.color(MyTheme.darkBluishColor).bold.make(),
-                       catalog.desc.text.xl.center.textStyle(context.captionStyle).make(),
+                       catalog.name.text.xl3.color(context.accentColor).bold.make(),
+                       catalog.desc.text.xl.color(context.accentColor).center.textStyle(context.captionStyle).make(),
                        10.heightBox,
                        "Dolores elitr amet lorem eirmod tempor et consetetur lorem, ea diam labore. Dolores elitr amet lorem eirmod tempor et consetetur lorem, ea diam labore consetetur dolore kasd sit at sed eos."
-                       .text.textStyle(context.captionStyle).make()
+                       .text.color(context.accentColor).textStyle(context.captionStyle).make()
                     ],
                   ).py32(),
                 ),
