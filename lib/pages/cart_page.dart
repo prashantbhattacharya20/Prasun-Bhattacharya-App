@@ -34,7 +34,11 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\u{20B9}${_cart.totalPrice}".text.xl5.color(context.accentColor).make(),
+          "\u{20B9}${_cart.totalPrice}"
+              .text
+              .xl5
+              .color(context.accentColor)
+              .make(),
           30.widthBox,
           ElevatedButton(
             onPressed: (() {
@@ -66,17 +70,24 @@ class _CartListState extends State<_CartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: _cart.items.length,
-        itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
-              iconColor: context.accentColor,
-              trailing: IconButton(
-                icon: Icon(Icons.remove_circle_outline),
-                color: context.accentColor,
-                onPressed: () {},
-              ),
-              title: _cart.items[index].name.text.color(context.accentColor).make(),
-            ));
+    return _cart.items.isNotEmpty
+        ? ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+                  leading: Icon(Icons.done),
+                  iconColor: context.accentColor,
+                  trailing: IconButton(
+                    icon: Icon(Icons.remove_circle_outline),
+                    color: context.accentColor,
+                    onPressed: () {
+                      _cart.remove(_cart.items[index]);
+                      setState(() {});
+                    },
+                  ),
+                  title: _cart.items[index].name.text
+                      .color(context.accentColor)
+                      .make(),
+                ))
+        : "Nothing to show".text.color(context.accentColor).xl3.makeCentered();
   }
 }
