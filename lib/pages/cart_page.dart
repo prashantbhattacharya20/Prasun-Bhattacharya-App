@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/cart.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -27,20 +28,18 @@ class CartPage extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\u{20B9}3000".text.xl5.color(context.accentColor).make(),
+          "\u{20B9}${_cart.totalPrice}".text.xl5.color(context.accentColor).make(),
           30.widthBox,
           ElevatedButton(
             onPressed: (() {
               ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: "Buying not Supported yet".text.make()
-                  )
-              );
+                  SnackBar(content: "Buying not Supported yet".text.make()));
             }),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
@@ -64,19 +63,20 @@ class _CartList extends StatefulWidget {
 }
 
 class _CartListState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 5,
+        itemCount: _cart.items.length,
         itemBuilder: (context, index) => ListTile(
               leading: Icon(Icons.done),
-                       iconColor: context.accentColor,
+              iconColor: context.accentColor,
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
                 color: context.accentColor,
                 onPressed: () {},
               ),
-              title: "Item 1".text.color(context.accentColor).make(),
+              title: _cart.items[index].name.text.color(context.accentColor).make(),
             ));
   }
 }
