@@ -86,12 +86,12 @@ Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
-  int id;
-  String name;
-  String desc;
-  num price;
-  String color;
-  String image;
+ final int id;
+ final String name;
+ final String desc;
+ final num price;
+ final String color;
+ final String image;
 
   Item(
       {required this.id,
