@@ -4,6 +4,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
+        primaryColor: darkBluishColor,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: Colors.white,
         canvasColor: creamColor,
@@ -18,6 +19,7 @@ class MyTheme {
       );
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
+        primaryColor: creamColor,
         cardColor: Colors.black,
         canvasColor: darkCreamColor,
         floatingActionButtonTheme: FloatingActionButtonThemeData(

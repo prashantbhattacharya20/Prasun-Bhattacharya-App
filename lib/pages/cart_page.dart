@@ -57,7 +57,7 @@ class _CartTotal extends StatelessWidget {
                 shape: MaterialStateProperty.all(
                   StadiumBorder(),
                 )),
-            child: "Buy".text.bold.make(),
+            child: "Book Slots".text.bold.make(),
           ).w32(context)
         ],
       ),

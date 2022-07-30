@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -8,13 +9,13 @@ class MyDrawer extends StatelessWidget {
 
     return Drawer(
       child: Container(
-        color: Color.fromARGB(255, 184, 255, 239),
+        color: context.canvasColor,
         child: ListView(
           children: [
             DrawerHeader(
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(
-                  accountName: Text("Prasun Bhattacharya"),
+                  accountName: "Prasun Bhattacharya".text.bold.lg.make(),
                   accountEmail: Text("prasun.mgm@gmail.com"),
                   margin: EdgeInsets.zero,
                   currentAccountPicture: CircleAvatar(
@@ -27,13 +28,13 @@ class MyDrawer extends StatelessWidget {
               key: key,
               leading: Icon(
                 CupertinoIcons.home,
-                color: Colors.black,
+                color: context.accentColor,
               ),
               title: Text(
                 "Home",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: context.accentColor,
                   ),
               ), 
             ),
@@ -42,13 +43,13 @@ class MyDrawer extends StatelessWidget {
               key: key,
               leading: Icon(
                 CupertinoIcons.profile_circled,
-                color: Colors.black,
+                color: context.accentColor,
               ),
               title: Text(
                 "Profile",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: context.accentColor,
                   ),
               ), 
             ),
@@ -57,13 +58,13 @@ class MyDrawer extends StatelessWidget {
               key: key,
               leading: Icon(
                 CupertinoIcons.mail,
-                color: Colors.black,
+                color: context.accentColor,
               ),
               title: Text(
                 "Mail Me",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: context.accentColor,
                   ),
               ), 
             ),
@@ -72,13 +73,13 @@ class MyDrawer extends StatelessWidget {
               key: key,
               leading: Icon(
                 IconData(0xf88b, fontFamily: 'MaterialIcons'),
-                color: Colors.black,
+                color: context.accentColor,
               ),
               title: Text(
                 "Logout",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: context.accentColor,
                   ),
               ), 
             ),
