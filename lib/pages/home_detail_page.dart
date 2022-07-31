@@ -32,8 +32,8 @@ class HomeDetailPage extends StatelessWidget {
               tag: Key(catalog.id.toString()),
               child: Image.network(
                 catalog.image,
-                height: 400,
-                width: 400,
+                height: 350,
+                width: 350,
                 ),
             ).py16(),
             Expanded(
@@ -47,10 +47,11 @@ class HomeDetailPage extends StatelessWidget {
                   child: Column(
                     children: [
                        catalog.name.text.xl3.color(context.accentColor).bold.make(),
-                       catalog.desc.text.xl.color(context.accentColor).center.textStyle(context.captionStyle).make(),
                        10.heightBox,
-                       "Dolores elitr amet lorem eirmod tempor et consetetur lorem, ea diam labore. Dolores elitr amet lorem eirmod tempor et consetetur lorem, ea diam labore consetetur dolore kasd sit at sed eos."
-                       .text.color(context.accentColor).textStyle(context.captionStyle).make()
+                       catalog.details.text.color(context.accentColor).center.textStyle(context.captionStyle).make(),
+                       10.heightBox,
+                       catalog.stepsToFolllow.text.color(context.accentColor).center.bold.make(),
+                       catalog.steps.text.color(context.accentColor).align(TextAlign.justify).textStyle(context.captionStyle).make(),
                     ],
                   ).py32(),
                 ),

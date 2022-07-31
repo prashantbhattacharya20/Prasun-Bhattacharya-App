@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -27,11 +28,11 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               key: key,
               leading: Icon(
-                CupertinoIcons.home,
+                CupertinoIcons.info,
                 color: context.accentColor,
               ),
               title: Text(
-                "Home",
+                "About Me",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: context.accentColor,
@@ -62,6 +63,81 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Mail Me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: context.accentColor,
+                  ),
+              ), 
+            ),
+
+            ListTile(
+              key: key,
+              leading: Icon(
+                Icons.whatsapp_outlined,
+                color: context.accentColor,
+              ),
+              title: Text(
+                "Text Me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: context.accentColor,
+                  ),
+              ), 
+            ),
+
+            ListTile(
+              key: key,
+              leading: Icon(
+                FontAwesomeIcons.instagram,
+                color: context.accentColor,
+              ),
+              title: Text(
+                "DM Me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: context.accentColor,
+                  ),
+              ), 
+            ),
+
+            ListTile(
+              key: key,
+              leading: Icon(
+                Icons.call,
+                color: context.accentColor,
+              ),
+              title: Text(
+                "Call Me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: context.accentColor,
+                  ),
+              ), 
+            ),
+
+            ListTile(
+              key: key,
+              leading: Icon(
+                Icons.settings,
+                color: context.accentColor,
+              ),
+              title: Text(
+                "Settings",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: context.accentColor,
+                  ),
+              ), 
+            ),
+
+            ListTile(
+              key: key,
+              leading: Icon(
+                Icons.help_outline,
+                color: context.accentColor,
+              ),
+              title: Text(
+                "Help",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: context.accentColor,
