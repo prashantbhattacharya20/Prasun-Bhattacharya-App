@@ -8,7 +8,23 @@ import 'catalog_image.dart';
 class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return !context.isMobile ? GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 20),
+      shrinkWrap: true,
+      itemCount: CatalogModel.items.length,
+      itemBuilder: (context, index) {
+        final catalog = CatalogModel.items[index];
+        return InkWell(
+          child: CatalogItem(catalog: catalog),
+          onTap: (() => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomeDetailPage(
+                        catalog: catalog,
+                      )))),
+        );
+      },
+    ) : ListView.builder(
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
@@ -34,14 +50,12 @@ class CatalogItem extends StatelessWidget {
       : assert(catalog != null);
   @override
   Widget build(BuildContext context) {
-    return VxBox(
-        child: Row(
-      children: [
+    var children2 = [
         Hero(
             tag: Key(catalog.id.toString()),
             child: CatalogImage(image: catalog.image)),
         Expanded(
-            child: Column(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -63,9 +77,14 @@ class CatalogItem extends StatelessWidget {
               ],
             )
           ],
-        ))
-      ],
-    )).color(context.cardColor).rounded.square(200).make().py16();
+          ).p(context.isMobile ? 0 : 16)
+        )
+      ];
+    return VxBox(
+        child: context.isMobile? Row(
+      children: children2,
+    ) : Column(children: children2)
+    ).color(context.cardColor).rounded.square(200).make().py16();
   }
 }
 
