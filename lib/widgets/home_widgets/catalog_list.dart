@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/pages/home_detail_page.dart';
+import 'package:prasun_bhattacharya_app/pages/home_detail_page.dart';
 import '../../models/catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'add_to_cart.dart';

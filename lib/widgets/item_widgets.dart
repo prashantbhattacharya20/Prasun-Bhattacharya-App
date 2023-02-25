@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/models/catalog.dart';
+import 'package:prasun_bhattacharya_app/models/catalog.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;
